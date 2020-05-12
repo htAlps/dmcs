@@ -1,4 +1,4 @@
-# dmcs-l: Distributed Minimal Composable Superposition λ-System 
+# Distributed Minimal Composable Superimposed λ-System 
 
 ## Overview
 In this two repositories DMCS-λ and DMCS-π we develop distributed systems for the purpose of exploring aspects like: security weaknesses or strengths, elegance, performance, etc.
