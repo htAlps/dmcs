@@ -3,14 +3,14 @@
 ## Overview
 In this two repositories DMCS-λ and DMCS-π we develop distributed systems for the purpose of exploring aspects like: security weaknesses or strengths, elegance, performance, etc.
 The λ version (λ-calculus) is a process/services implementation while the π version (π-calculus) is a distributed (containerized) implementation using the usual suspects.
-We're Following a general guideline: Superposition of Minimal Orthogonal Compositions which to us means the following 2 things:
+We're Following a general guideline: Superposition of Minimal Orthogonal Compositions which to us means the following:
 
-• we are going to write minimal code that is sufficient to make a point and no more (Occam's Razor)
+• write minimal code that is sufficient to make a point and no more (Occam's Razor)
 
-• code modules will generally do one thing, be composable and independent of each other in the same layer
+• design modules to do one thing, be composable and independent of each other in the same layer
 
 ## Rant
-I'm tired of demos that are entire systems with bell and whistles and are already mounted on an undecomposable abstraction.
+We want to avoid superfuous bell and whistles or undecomposable abstractions
 
 
 ## Components
