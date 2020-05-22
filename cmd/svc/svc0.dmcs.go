@@ -2,7 +2,7 @@
 //  svc0.dmcs.go
     package main
 
-    import ( "dmcs-l/lib"; )
+    import ( "dmcs/lib"; )
 
 //  ._______.___________________.___________________.___________________.___________________._______;
 //  MAIN PROGRAM
