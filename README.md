@@ -20,9 +20,9 @@ We want to avoid superfuous bell and whistles or undecomposable abstractions
 ## Components
 We want to explore the following in order of appearance
 
-• Arch Linux: because we control which components are in the OS      
+• Arch Linux: for better OS component control and package management
 
-• Go (Golang): because it's one of my favorite languages with Haskell, Rust, and Ruby
+• Go (Golang): an obvious choice and because it's a favorite languages with Haskell, Rust, and C.
 
 • Docker: to model scalability
 
@@ -36,6 +36,8 @@ We want to explore the following in order of appearance
 
 • Vault: to explore improvements to secure key management
 
+• Prometheus: to 
+
 
 ## Branching on Subjects 
 We want to explore a number of subject areas while preserving key steps that exemplify an issue of interest. 
@@ -45,28 +47,56 @@ The Git platform seems ideal for a concrete representation of this.
 Often we are presented a system in its current magestic (and sometimes indescipherable) state and wonder how it got there, 
 i.e., what are its essential components, when was each component introduced, etc. 
 
-We want to explore this evolution and try to establish a cannonical partial order.  
+We want to explore security and best practices as we evolve and branch the systems and try to establish a cannonical partial order.  
 
 
-       DMCS-λ (Services Based)
-        │   
-        ├─>DMCS-TLS 
-        │   │ 
-        │   ├──π,
-        │   ├──π,
-        │   │
+    # DMCS - Distributed Minimal Composable Superimposed System 
+
+    ## Functional Evolution and Branching Tree
+
+
+       DMCS - (λ: Services Based)
         │
-        └─>
-
-
-       DMCS-π (Container Based)
-        │   
-        ├─>DMCS-TLS 
-        │   │ 
-        │   ├──π,
-        │   ├──π,
-        │   │
+        ├── ReST
         │
-        └─>
+        ├── ProtoBuf
+        │
+        ├── GRPC
+        │  
+        ├───────────────> DMCSP - (π: Docker-Hashicorp)
+        │                   │                                     
+        ├── TLS             ├── Docker                            
+        │                   │                                     
+        ├── SystemD         ├───────────────> DMCSK - (π: Kube-Stack)
+        │                   │                   │  
+        ├── ETCD            ├── Swarm           ├── Kubernetes    
+        │                   │                   │       
+        ├──                 ├── Consul          ├── Istio    
+        │                   │                   │       
+        └─>                 ├── Vault           ├── Prometheus      
+                            │                   │       
+                            ├── Prometheus      ├──     
+                            │                   │       
+                            ├──                 └─> 
+                            │                                     
+                            └─>                           
+
+    ### Legend:
+       λ System  (λ-calculus) is a process/services implementation 
+       π Systems (π-calculus) are distributed (containerized) implementations
+
+
+
+
+
+## NON-Functional Components 
+
+        Environments:
+            Development: Local Arch-Linux Servers Inside  
+            Integration & Testing: AZ / AWS / GCP Platforms 
+            Production: Same Platforms (may not be needed due to the experimental nature of the project)
+
+        DevOps (Pipelines): AZ DevOps
+
 
 
