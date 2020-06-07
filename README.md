@@ -6,11 +6,11 @@ The λ version (λ-calculus) is a process/services implementation while the π v
 They are esentially the same abstract distributed system with two distinct implementations. 
 We're Following a general guideline: Superposition of Minimal Orthogonal Compositions which to us means the following:
 
-• write minimal code that is sufficient to make a point and no more (Occam's Razor)
+- write minimal code that is sufficient to make a point and no more (Occam's Razor)
 
-• design modules to do one thing, be composable, and independent (orthogonal) of each other within the same layer
+- design modules to do one thing, be composable, and independent (orthogonal) of each other within the same layer
 
-• don't compose when you can superimpose components
+- don't compose when you can superimpose components
 
 
 ## Rant
@@ -20,23 +20,23 @@ We want to avoid superfuous bell and whistles or undecomposable abstractions
 ## Components
 We want to explore the following in order of appearance
 
-• Arch Linux: for better OS component control and package management
+- Arch Linux: for better OS component control and package management
 
-• Go (Golang): an obvious choice and because it's a favorite languages with Haskell, Rust, and C.
+- Go (Golang): an obvious choice and because it's a favorite languages with Haskell, Rust, and C.
 
-• Docker: to model scalability
+- Docker: to model scalability
 
-• gRPC: to explore performance 
+- gRPC: to explore performance 
 
-• etcd: to explore basic clustering 
+- etcd: to explore basic clustering 
 
-• Swarm: to explore simple scalability
+- Swarm: to explore simple scalability
 
-• Consul: to explore simple security 
+- Consul: to explore simple security 
 
-• Vault: to explore improvements to secure key management
+- Vault: to explore improvements to secure key management
 
-• Prometheus: to 
+- Prometheus: to 
 
 
 ## Branching on Subjects 
