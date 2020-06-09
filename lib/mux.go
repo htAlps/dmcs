@@ -9,7 +9,7 @@
     const url1      = `http://localhost:8081/key/`
     const url2      = `http://localhost:8082/key/`
     const z_string  = ``
-    const TTL_7sec  = 7   * time.Second
+    const TTL_7sec  = 7 * time.Second
     const path_pk1  = `/usr/local/sys/bin/key/pk1.crt`
     const path_sk1  = `/usr/local/sys/bin/key/sk1.key`
 
@@ -67,9 +67,9 @@
 
 
 //  ._______.___________________.___________________.___________________.___________________.___________________._______;
-//  main http clients
+//  main http1.1 clients
 
-    func Cli0_main(key string) {
+    func Cli0_rest_main(key string) {
 
         body, err := cli_get(url0, key)
         if err != nil {
@@ -79,7 +79,7 @@
         fmt.Printf("\nRESP:\n%v\n\n", body)
     }
 
-    func Cli1_main(key string) {
+    func Cli1_rest_main(key string) {
 
         body, err := cli_get(url1, key)
         if err != nil {
@@ -89,7 +89,7 @@
         fmt.Printf("\nRESP:\n%v\n\n", body)
     }
 
-    func Cli2_main(key string) {
+    func Cli2_rest_main(key string) {
 
         body, err := cli_get(url2, key)
         if err != nil {
@@ -102,7 +102,7 @@
 
 //  ._______.___________________.___________________.___________________.___________________.___________________._______;
 //  main http servers
-    func Svc0_main() {
+    func Svc0_rest_main() {
 
         rr := mux.New()
         rr.GET("/",         handle_index)
@@ -112,7 +112,7 @@
     }
 
 
-    func Svc1_main() {
+    func Svc1_rest_main() {
 
         rr := mux.New()
         rr.GET("/key/:key", handle_key1)
@@ -121,7 +121,7 @@
     }
 
 
-    func Svc2_main() {
+    func Svc2_rest_main() {
 
         rr := mux.New()
         rr.GET("/key/:key", handle_key2)
