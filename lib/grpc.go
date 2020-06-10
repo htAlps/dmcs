@@ -60,13 +60,13 @@
 
         conn, err := net.Listen(tcp, grpc_port)
         if err != nil {
-            log.Fatalf("Failed to Listen on port %s - %v", grpc_port, err)
+            log.Fatalf("Listen Failed - Port: %s - Error: %v", grpc_port, err)
         }
 
         grpcSvc := grpc.NewServer()
 
         if err := grpcSvc.Serve(conn); err != nil {
-            log.Fatalf("Failed to Serve on port %s - %v", grpc_port, err)
+            log.Fatalf("Server Failed - Port: %s - Error: %v", grpc_port, err)
         }
 
     }
@@ -87,6 +87,18 @@
         rr.GET("/key/:key", handle_key2)
 
         http.ListenAndServe(":8082", rr)
+    }
+
+
+    func Hello_main2() {
+        var ii int = 32
+        jj := 33;
+        xx := 43.2345
+
+        fmt.Println("Hello World!", ii, jj, xx)
+        fmt.Println(jj-ii)
+
+        fmt.Println()
     }
 
 
