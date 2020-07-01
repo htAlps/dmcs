@@ -4,14 +4,17 @@
 
     import ("os"; "io/ioutil"; "time"; "fmt"; "net/http";  mux "github.com/julienschmidt/httprouter"; )
 
-    const msg1      = `Hello World`
-    const url0      = `http://localhost:8080/key/`
-    const url1      = `http://localhost:8081/key/`
-    const url2      = `http://localhost:8082/key/`
-    const z_string  = ``
-    const TTL_7sec  = 7 * time.Second
-    const path_pk1  = `/usr/local/sys/bin/key/pk1.crt`
-    const path_sk1  = `/usr/local/sys/bin/key/sk1.key`
+    const msg1          = `Hello World`
+    const url1          = `http://localhost:8071/key/`
+    const url2          = `http://localhost:8072/key/`
+    const url3          = `http://localhost:8073/key/`
+    const rest1_port    = `:8071`
+    const rest2_port    = `:8072`
+    const rest3_port    = `:8073`
+    const z_string      = ``
+    const TTL_7sec      = 7 * time.Second
+    const path_pk1      = `/usr/local/sys/bin/key/pk1.crt`
+    const path_sk1      = `/usr/local/sys/bin/key/sk1.key`
 
 
 //  ._______.___________________.___________________.___________________.___________________.___________________._______;
@@ -21,24 +24,24 @@
         fmt.Fprint(ww, `Welcome... use:iam to tell me your name, e.g., /iam/John `)
     }
 
-    func handle_key0(ww http.ResponseWriter, rr *http.Request, params mux.Params) {
-        body, err := cli_get(url1, params.ByName("key") + "B")
-        if err != nil {
-            fmt.Fprintf(ww, "From svc0: [ ERROR ] ")
-        }
-        fmt.Fprintf(ww, "From svc0: [ %s ] ", body)
-    }
-
     func handle_key1(ww http.ResponseWriter, rr *http.Request, params mux.Params) {
-        body, err := cli_get(url2, params.ByName("key") + "C")
+        body, err := cli_get(url2, params.ByName("key") + "B")
         if err != nil {
             fmt.Fprintf(ww, "From svc1: [ ERROR ] ")
         }
-        fmt.Fprintf(ww, "From svc1: [ %s ]", body)
+        fmt.Fprintf(ww, "From svc1: [ %s ] ", body)
     }
 
     func handle_key2(ww http.ResponseWriter, rr *http.Request, params mux.Params) {
-        fmt.Fprintf(ww, "from svc2: [ %s ]", params.ByName("key"))
+        body, err := cli_get(url3, params.ByName("key") + "C")
+        if err != nil {
+            fmt.Fprintf(ww, "From svc1: [ ERROR ] ")
+        }
+        fmt.Fprintf(ww, "From svc2: [ %s ]", body)
+    }
+
+    func handle_key3(ww http.ResponseWriter, rr *http.Request, params mux.Params) {
+        fmt.Fprintf(ww, "from svc3: [ %s ]", params.ByName("key"))
     }
 
 
@@ -69,16 +72,6 @@
 //  ._______.___________________.___________________.___________________.___________________.___________________._______;
 //  main http1.1 clients
 
-    func Cli0_rest_main(key string) {
-
-        body, err := cli_get(url0, key)
-        if err != nil {
-            fmt.Printf("\nERROR: %v \nExiting ... \n", err.Error())
-            os.Exit(1)
-        }
-        fmt.Printf("\nRESP:\n%v\n\n", body)
-    }
-
     func Cli1_rest_main(key string) {
 
         body, err := cli_get(url1, key)
@@ -99,25 +92,26 @@
         fmt.Printf("\nRESP:\n%v\n\n", body)
     }
 
+    func Cli3_rest_main(key string) {
 
-//  ._______.___________________.___________________.___________________.___________________.___________________._______;
-//  main http servers
-    func Svc0_rest_main() {
-
-        rr := mux.New()
-        rr.GET("/",         handle_index)
-        rr.GET("/key/:key", handle_key0)
-
-        http.ListenAndServe(":8080", rr)
+        body, err := cli_get(url3, key)
+        if err != nil {
+            fmt.Printf("\nERROR: %v \nExiting ... \n", err.Error())
+            os.Exit(1)
+        }
+        fmt.Printf("\nRESP:\n%v\n\n", body)
     }
 
 
+//  ._______.___________________.___________________.___________________.___________________.___________________._______;
+//  main http servers
     func Svc1_rest_main() {
 
         rr := mux.New()
+        rr.GET("/",         handle_index)
         rr.GET("/key/:key", handle_key1)
 
-        http.ListenAndServe(":8081", rr)
+        http.ListenAndServe(rest1_port, rr)
     }
 
 
@@ -126,7 +120,16 @@
         rr := mux.New()
         rr.GET("/key/:key", handle_key2)
 
-        http.ListenAndServe(":8082", rr)
+        http.ListenAndServe(rest2_port, rr)
+    }
+
+
+    func Svc3_rest_main() {
+
+        rr := mux.New()
+        rr.GET("/key/:key", handle_key3)
+
+        http.ListenAndServe(rest3_port, rr)
     }
 
 
