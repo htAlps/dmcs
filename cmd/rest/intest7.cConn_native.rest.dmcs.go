@@ -1,5 +1,5 @@
 //  ._______.___________________.___________________.___________________.___________________._______;
-//  svc2_rest.dmcs.go
+//  cli7.cConn_native.rest.dmcs.go
     package main
 
     import ( "dmcs/lib"; )
@@ -8,5 +8,6 @@
 //  MAIN PROGRAM
     func main() {
 
-        lib.Svc2_rest_main()
+        lib.Intest7_cConn_native_rest_dmcs(`AAAA`)
     }
+

@@ -1,11 +1,13 @@
 //  ._______.___________________.___________________.___________________.___________________._______;
-//  cli1_rest.dmcs.go 
+//  ssvc4_consul_connect.rest.dmcs.go
     package main
 
     import ( "dmcs/lib"; )
 
 //  ._______.___________________.___________________.___________________.___________________._______;
+//  MAIN PROGRAM
     func main() {
 
-        lib.Cli1_rest_main(`AAAA`)
+        lib.Svc4_cConn_sidecar_rest_dmcs()
     }
+

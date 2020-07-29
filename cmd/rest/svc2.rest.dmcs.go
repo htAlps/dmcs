@@ -1,5 +1,5 @@
 //  ._______.___________________.___________________.___________________.___________________._______;
-//  svc1_rest.dmcs.go
+//  svc2_rest.dmcs.go
     package main
 
     import ( "dmcs/lib"; )
@@ -8,5 +8,5 @@
 //  MAIN PROGRAM
     func main() {
 
-        lib.Svc1_rest_main()
+        lib.Svc2_rest_dmcs()
     }
