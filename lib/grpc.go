@@ -23,11 +23,11 @@
     }
 
 //  ._______.___________________.___________________.___________________.___________________.___________________._______;
-//  main http2.0 clients
+//  main http2.0 Integration Tests (intest)
 
-    func Cli1_grpc_main(key string) {
+    func Intest1_grpc_dmcs(key string) {
 
-        body, err := cli_get(url3, key)
+        body, err := http_get(http_url3, key)
         if err != nil {
             fmt.Printf("\nERROR: %v \nExiting ... \n", err.Error())
             os.Exit(1)
@@ -35,9 +35,9 @@
         fmt.Printf("\nRESP:\n%v\n\n", body)
     }
 
-    func Cli2_grpc_main(key string) {
+    func Intest2_grpc_dmcs(key string) {
 
-        body, err := cli_get(url1, key)
+        body, err := http_get(http_url1, key)
         if err != nil {
             fmt.Printf("\nERROR: %v \nExiting ... \n", err.Error())
             os.Exit(1)
@@ -45,9 +45,9 @@
         fmt.Printf("\nRESP:\n%v\n\n", body)
     }
 
-    func Cli3_grpc_main(key string) {
+    func Intest3_grpc_dmcs(key string) {
 
-        body, err := cli_get(url2, key)
+        body, err := http_get(http_url2, key)
         if err != nil {
             fmt.Printf("\nERROR: %v \nExiting ... \n", err.Error())
             os.Exit(1)
@@ -66,7 +66,7 @@
 
 //  ._______.___________________.___________________.___________________.___________________.___________________._______;
 //  main http servers
-    func Svc1_grpc_main() {
+    func Svc1_grpc_dmcs() {
 
         conn, err := net.Listen(tcp, grpc1_port)
         if err != nil {
@@ -81,7 +81,7 @@
     }
 
 
-    func Svc2_grpc_main() {
+    func Svc2_grpc_dmcs() {
 
         conn, err := net.Listen(tcp, grpc1_port)
         if err != nil {
@@ -96,7 +96,7 @@
     }
 
 
-    func Svc3_grpc_main() {
+    func Svc3_grpc_dmcs() {
 
         conn, err := net.Listen(tcp, grpc3_port)
         if err != nil {
@@ -111,7 +111,7 @@
     }
 
 
-    func Hello_main2() {
+    func Hello2() {
         var ii int = 32
         jj := 33;
         xx := 43.2345

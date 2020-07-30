@@ -1,0 +1,10 @@
+{
+    "service": {
+        "name": "cli7_native", 
+        "tags": ["cli"], 
+        "port": 8057,
+        "connect": {
+            "native": true
+        }
+    } 
+}

@@ -12,52 +12,62 @@ installAll() {
 
 installRest1-3() {
     echo Installing REST 1-3
-    go install $sysroot/src/dmcs/cmd/rest/intest1.rest.dmcs.go
-go install $sysroot/src/dmcs/cmd/rest/intest2.rest.dmcs.go
-go install $sysroot/src/dmcs/cmd/rest/intest3.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest1.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest2.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest3.rest.dmcs.go
 
-go install $sysroot/src/dmcs/cmd/rest/svc1.rest.dmcs.go
-go install $sysroot/src/dmcs/cmd/rest/svc2.rest.dmcs.go
-go install $sysroot/src/dmcs/cmd/rest/svc3.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/svc1.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/svc2.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/svc3.rest.dmcs.go
 }
 
 installSideCar4-6() {
     echo $p1 - Installing SideCar 4-6
-go install $sysroot/src/dmcs/cmd/rest/intest4.cConn_sidecar.rest.dmcs.go
-go install $sysroot/src/dmcs/cmd/rest/svc4.cConn_sidecar.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest4.cConn_sidecar.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest5.cConn_sidecar.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest6.cConn_sidecar.rest.dmcs.go
+
+    go install $sysroot/src/dmcs/cmd/rest/svc4.cConn_sidecar.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/svc5.cConn_sidecar.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/svc6.cConn_sidecar.rest.dmcs.go
 }
 
 installNative7-9() {
     echo $p1 - Installing Native 7-9
-    go install $sysroot/src/dmcs/cmd/rest/intest7.cConn_native.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest7.cConn_native.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest8.cConn_native.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest9.cConn_native.rest.dmcs.go
+
     go install $sysroot/src/dmcs/cmd/rest/svc7.cConn_native.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/svc8.cConn_native.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/svc9.cConn_native.rest.dmcs.go
 }
 
 installMongoA-C() {
     echo $p1 - Installing Mongo A-C
-    go install $sysroot/src/dmcs/cmd/rest/intestA.mongo.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itestA.mongo.rest.dmcs.go
     go install $sysroot/src/dmcs/cmd/rest/svcA.mongo.rest.dmcs.go
 }
 
 installSideCar4() {
     echo $p1 - Installing SideCar 4
-    go install $sysroot/src/dmcs/cmd/rest/intest4.cConn_sidecar.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest4.cConn_sidecar.rest.dmcs.go
     go install $sysroot/src/dmcs/cmd/rest/svc4.cConn_sidecar.rest.dmcs.go
 }
 
 installNative7() {
     echo $p1 - Installing Native 7
-    go install $sysroot/src/dmcs/cmd/rest/intest7.cConn_native.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itest7.cConn_native.rest.dmcs.go
     go install $sysroot/src/dmcs/cmd/rest/svc7.cConn_native.rest.dmcs.go
 }
 
 installMongoA() {
     echo $p1 - Installing Native 7
-    go install $sysroot/src/dmcs/cmd/rest/intestA.mongo.rest.dmcs.go
+    go install $sysroot/src/dmcs/cmd/rest/itestA.mongo.rest.dmcs.go
     go install $sysroot/src/dmcs/cmd/rest/svcA.mongo.rest.dmcs.go
 }
 
-intestA.mongo.rest.dmcs.go  
+itestA.mongo.rest.dmcs.go  
 svcA.mongo.rest.dmcs.go
 
 other() {

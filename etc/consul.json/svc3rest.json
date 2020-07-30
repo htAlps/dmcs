@@ -1,0 +1,8 @@
+{
+    "service": {
+        "name": "svc3rest", 
+        "tags": ["svc"], 
+        "port": 8073
+    } 
+}
+

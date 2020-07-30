@@ -1,5 +1,5 @@
 //  ._______.___________________.___________________.___________________.___________________._______;
-//  cli1_rest.dmcs.go 
+//  ITest7.cConn_native.rest.dmcs.go
     package main
 
     import ( "dmcs/lib"; )
@@ -7,5 +7,6 @@
 //  ._______.___________________.___________________.___________________.___________________._______;
     func main() {
 
-        lib.Intest1_rest_dmcs(`AAAA`)
+        lib.ITest7_cConn_native_rest_dmcs(`AAAA->`)
     }
+
