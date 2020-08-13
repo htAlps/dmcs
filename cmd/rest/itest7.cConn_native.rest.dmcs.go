@@ -7,6 +7,8 @@
 //  ._______.___________________.___________________.___________________.___________________._______;
     func main() {
 
-        lib.ITest7_cConn_native_rest_dmcs(`AAAA->`)
+        for ii := 0; ii < 100; ii++ {
+            lib.ITest7_cConn_native_rest_dmcs(`AAaa->`)
+        }
     }
 
